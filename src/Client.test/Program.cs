@@ -15,10 +15,10 @@
 
         private static async void Execute()
         {
-            var disco = await DiscoveryClient.GetAsync("http://localhost:5005");
+            var disco = await DiscoveryClient.GetAsync("http://localhost:5000");
 
             var tokenClient = new TokenClient(disco.TokenEndpoint, "oauthClient", "superSecretPassword");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("customAPI");
+            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("customAPI.read");
 
             if (tokenResponse.IsError)
             {
@@ -38,7 +38,7 @@
             }
             else
             {
-                var content = await response.Content.ReadAsStringAsync();
+                var content = await response.Content.ReadAsStringAsync();  
                 Console.WriteLine(JArray.Parse(content));
             }
         }
