@@ -10,6 +10,11 @@ using Microsoft.Extensions.Logging;
 
 namespace Api.test
 {
+    using AutoMapper;
+    using Business;
+    using Business.DataAccess;
+    using DTO;
+
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -36,6 +41,12 @@ namespace Api.test
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
+
+            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserDto, User>());
+            var mapper = config.CreateMapper();
+            services.AddSingleton<IMapper>(mapper);
+
+            services.AddSingleton<IRepository<User>>(new MemoryRepository<User>());
 
             services.AddMvc();
         }

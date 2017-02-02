@@ -17,8 +17,8 @@
         {
             var disco = await DiscoveryClient.GetAsync("http://localhost:5000");
 
-            var tokenClient = new TokenClient(disco.TokenEndpoint, "oauthClient", "superSecretPassword");
-            var tokenResponse = await tokenClient.RequestClientCredentialsAsync("customAPI.read");
+            var tokenClient = new TokenClient(disco.TokenEndpoint, "trustedClient", "superSecretPassword");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("scott", "password", "customAPI.read");
 
             if (tokenResponse.IsError)
             {

@@ -9,6 +9,7 @@
 -nologo
 "C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
 -out:"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\bin\Debug\netcoreapp1.0\Api.test.dll"
+-r:"C:\Users\d.fernandez\.nuget\packages\AutoMapper\5.2.0\lib\netstandard1.3\AutoMapper.dll"
 -r:"C:\Users\d.fernandez\.nuget\packages\IdentityModel\2.1.1\lib\netstandard1.3\IdentityModel.dll"
 -r:"C:\Users\d.fernandez\.nuget\packages\IdentityModel.AspNetCore.OAuth2Introspection\2.0.0\lib\netstandard1.3\IdentityModel.AspNetCore.OAuth2Introspection.dll"
 -r:"C:\Users\d.fernandez\.nuget\packages\IdentityModel.AspNetCore.ScopeValidation\1.0.0\lib\netstandard1.3\IdentityModel.AspNetCore.ScopeValidation.dll"
@@ -187,4 +188,10 @@
 -resource:"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\obj\Debug\netcoreapp1.0\Api.testdotnet-compile.deps.json",Api.test.deps.json
 "C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Program.cs"
 "C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Startup.cs"
+"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Business\IEntity.cs"
+"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Business\User.cs"
+"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Business\DataAccess\IRepository.cs"
+"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Business\DataAccess\MemoryRepository.cs"
+"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Controllers\AccountsController.cs"
 "C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\Controllers\ValuesController.cs"
+"C:\Users\d.fernandez\Source\Repos\IndentityServer.Test\src\Api.test\DTO\UserDto.cs"

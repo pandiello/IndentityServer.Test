@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "614bd84055c2ac6dff4fb89b90a696e33f80c56b"
+    "signature": "f59e57e6d5673a91a9b47c7ee29623980d41298a"
   },
   "compilationOptions": {
     "defines": [
@@ -29,13 +29,30 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "IdentityServer4.AccessTokenValidation": "1.0.1"
+          "IdentityServer4.AccessTokenValidation": "1.0.1",
+          "AutoMapper": "5.2.0"
         },
         "runtime": {
           "Api.test.dll": {}
         },
         "compile": {
           "Api.test.dll": {}
+        }
+      },
+      "AutoMapper/5.2.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.0.1",
+          "NETStandard.Library": "1.6.0",
+          "System.Collections.Specialized": "4.0.1",
+          "System.ComponentModel.TypeConverter": "4.1.0",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.Linq.Queryable": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/AutoMapper.dll": {}
         }
       },
       "IdentityModel/2.1.1": {
@@ -3115,6 +3132,11 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AutoMapper/5.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ulUMmzFg1vAFMpTyJsplgnC7pOIFlb25dbldHd7J4eroQWjSV4iAoOQ33h1oMjf6mLo3uZ8aRNUN2rgpOeSE1w=="
     },
     "IdentityModel/2.1.1": {
       "type": "package",

@@ -21,7 +21,17 @@ namespace IdentityServer.Test.Model
                     ClientSecrets = new List<Secret> {
                         new Secret("superSecretPassword".Sha256())},
                     AllowedScopes = new List<string> {"customAPI.read"}
+                },
+                new Client
+                {
+                    ClientId = "trustedClient",
+                    ClientName = "Example resource owner password",
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets = new List<Secret> {
+                        new Secret("superSecretPassword".Sha256())},
+                    AllowedScopes = new List<string> { "customAPI.read" }
                 }
+
             };
         }
 
