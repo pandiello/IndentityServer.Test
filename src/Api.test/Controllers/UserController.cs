@@ -33,7 +33,7 @@
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            return new JsonResult(this.usersRepository.GetById(id));
+            return new JsonResult(this.userMapper.Map<UserDto>(this.usersRepository.GetById(id)));
         }
 
         // POST api/accounts
@@ -51,7 +51,7 @@
                 return new BadRequestObjectResult("The user id must be unique.");
             }
 
-            return new JsonResult(user);
+            return new JsonResult(this.userMapper.Map<UserDto>(user));
         }
     }
 }

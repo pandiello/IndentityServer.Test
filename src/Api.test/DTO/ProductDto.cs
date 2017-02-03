@@ -1,17 +1,19 @@
 ﻿// -----------------------------------------------------------------------
-// <copyright file="UserDto.cs" company="Payvision">
+// <copyright file="ProductDto.cs" company="Payvision">
 //     Payvision Copyright © 2017
 // </copyright>
 // -----------------------------------------------------------------------
 namespace Api.test.DTO
 {
-    public class UserDto
+    public class ProductDto
     {
-        public string Password { get; set; }
-
-        public string Email { get; set; }
-
         public string Name { get; set; }
+
+        public double ExpectedValue { get; set; }
+
+        public int Tickets { get; set; }
+
+        public string UserId { get; set; }
 
         public string Id { get; set; }
     }

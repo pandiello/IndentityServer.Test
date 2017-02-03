@@ -12,7 +12,7 @@ namespace Api.test.Business.DataAccess
         where T : IEntity
     {
         private readonly Dictionary<string, T> repository = new Dictionary<string, T>();
-          
+        
         public T GetById(string id)
         {
             T value;
@@ -27,13 +27,30 @@ namespace Api.test.Business.DataAccess
 
         public bool TryAdd(T value)
         {
-            if (!this.repository.ContainsKey(value.Id))
+            if (value.Id != null)
             {
-                this.repository.Add(value.Id, value);
-                return true;
+                return false;
             }
+            
+            value.Id = this.GetUniqueId(); 
+            this.repository.Add(value.Id, value);
 
-            return false;
+            return true;
+        }
+
+        private string GetUniqueId()
+        {
+            while (true)
+            {
+                Guid guid = Guid.NewGuid();
+                if (this.repository.ContainsKey(guid.ToString()))
+                {
+                    continue;
+                }
+
+                return guid.ToString();
+                break;
+            }
         }
     }
 }

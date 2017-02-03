@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 namespace Api.test
 {
     using AutoMapper;
+    using AutoMapper.Configuration;
     using Business;
     using Business.DataAccess;
     using DTO;
@@ -42,11 +43,14 @@ namespace Api.test
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<UserDto, User>());
-            var mapper = config.CreateMapper();
+            var baseMappings = new MapperConfigurationExpression();
+            baseMappings.CreateMap<UserDto, User>().ReverseMap();
+            baseMappings.CreateMap<ProductDto, Product>().ReverseMap();
+            var mapper = new Mapper(new MapperConfiguration(baseMappings)); 
             services.AddSingleton<IMapper>(mapper);
 
             services.AddSingleton<IRepository<User>>(new MemoryRepository<User>());
+            services.AddSingleton<IRepository<Product>>(new MemoryRepository<Product>());
 
             services.AddMvc();
         }
@@ -61,13 +65,13 @@ namespace Api.test
 
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
-            {
-                Authority = "http://localhost:5000",
-                RequireHttpsMetadata = false,
+            //app.UseIdentityServerAuthentication(new IdentityServerAuthenticationOptions
+            //{
+            //    Authority = "http://localhost:5000",
+            //    RequireHttpsMetadata = false,
 
-                ApiName = "customAPI"
-            });
+            //    ApiName = "customAPI"
+            //});
 
 
             app.UseMvc();

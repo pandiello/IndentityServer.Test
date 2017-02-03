@@ -5,6 +5,8 @@
 // -----------------------------------------------------------------------
 namespace Api.test.Business
 {
+    using System.Collections.Generic;
+
     public class User : IEntity
     {
         public string Id { get; set; }
@@ -12,5 +14,9 @@ namespace Api.test.Business
         public string Password { get; set; }
 
         public string Email { get; set; }
+
+        public string Name { get; set; }
+
+        public List<Product> Products { get; set; } = new List<Product>();
     }
 }
