@@ -46,11 +46,13 @@ namespace Api.test
             var baseMappings = new MapperConfigurationExpression();
             baseMappings.CreateMap<UserDto, User>().ReverseMap();
             baseMappings.CreateMap<ProductDto, Product>().ReverseMap();
+            baseMappings.CreateMap<TicketDto, Ticket>().ReverseMap();
             var mapper = new Mapper(new MapperConfiguration(baseMappings)); 
             services.AddSingleton<IMapper>(mapper);
 
             services.AddSingleton<IRepository<User>>(new MemoryRepository<User>());
             services.AddSingleton<IRepository<Product>>(new MemoryRepository<Product>());
+            services.AddSingleton<IRepository<Ticket>>(new MemoryRepository<Ticket>());
 
             services.AddMvc();
         }

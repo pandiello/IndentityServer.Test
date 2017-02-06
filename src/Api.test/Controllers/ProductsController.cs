@@ -51,7 +51,7 @@ namespace Api.test.Controllers
         {
             if (productDto == null)
             {
-                return new BadRequestObjectResult("User argument is not present.");
+                return new BadRequestObjectResult("Product argument is not present.");
             }
 
             Product product = this.dtoMapper.Map<Product>(productDto);
@@ -63,7 +63,7 @@ namespace Api.test.Controllers
 
             if (!this.productsRepository.TryAdd(product))
             {
-                return new BadRequestObjectResult("The user id must be unique.");
+                return new BadRequestObjectResult("The product id must be unique.");
             }
 
             user.Products.Add(product);
